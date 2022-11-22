@@ -1,0 +1,76 @@
+﻿<Page x:Class="dfg.Pages.add_product"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:dfg.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="add_product" Background="#FFACEEC1" >
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="426*"/>
+            <ColumnDefinition Width="207*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="1">
+            
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" >
+        
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Артикул" Height="40" Width="150" />
+                <TextBlock Text="Название"  Height="40" Width="150" Margin="1" />
+                <TextBlock Text="Количество" Height="40" Width="150" />
+                <TextBlock Text="Описание"  Height="40" Width="150" />
+                <Image Height="40" Width="150" Opacity="0" />
+                <TextBlock Text="Цена"  Height="40" Width="150" />
+                <TextBlock Text="Скидка"  Height="40" Width="150" />
+                <TextBlock Text="Ед.Измерения"  Height="40" Width="150" />
+                <TextBlock Text="Категория"  Height="40" Width="150" />
+                <TextBlock Text="Поставщик"  Height="40" Width="150" />
+                <TextBlock Text="Производитель"  Height="40" Width="150" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox x:Name="article_number_product" Height="40" Width="150" />
+                <TextBox x:Name="title_product" Height="40" Width="150" Margin="1" />
+                <TextBox x:Name="count_of_stok_product" Height="40" Width="150" />
+                <TextBox x:Name="description_product" Height="40" Width="150" />
+                <Button x:Name="add_image" Content="добавить изображение" Height="40" Width="150" Background="#FFECBABA" Click="add_image_Click"/>
+                <TextBox x:Name="price_product" Height="40" Width="150" />
+                <TextBox x:Name="discount_product" Height="40" Width="150" />
+                    <ComboBox x:Name="ed_izmerenia_product" Height="40" Width="150" Background="#FFE86868">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding name_ed_izmerenia}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox x:Name="category_product" Height="40" Width="150" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding name_category}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox x:Name="supplier_product" Height="40" Width="150" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding name_supplier}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox x:Name="manufacturer_product" Height="40" Width="150" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding name_manufacturer}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        </ScrollViewer>
+        <Button x:Name="ADD_product" Content="Добавить товар" Width="100" Height="20" Grid.Column="2" Click="ADD_product_Click" />
+    </Grid>
+</Page>

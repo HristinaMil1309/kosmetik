@@ -1,0 +1,43 @@
+﻿<Page x:Class="dfg.Pages.registrr"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:dfg.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="registrr">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Text="Регистрация" FontSize="30"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <TextBox x:Name="Name" Background="Wheat" Width="200" Height="25"  />
+            <ComboBox x:Name="Role_cbx" Background="Wheat"  Width="200" Height="25"  >
+                <ComboBox.ItemTemplate >
+                    <DataTemplate>
+                        <TextBlock Text="{Binding  name_role }" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBox x:Name="Login_reg" Background="Wheat"   Width="200" Height="25" />
+            <TextBox x:Name="Password_reg" Background="Wheat"   Width="200" Height="25"  />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" >
+            <TextBlock Width="200" Height="25" Text="Ф.И.О." FontSize="20" />
+            <TextBlock Width="200" Height="25" Text="Должность" FontSize="20"  />
+            <TextBlock Width="200" Height="25" Text="Логин" FontSize="20"  />
+            <TextBlock Width="200" Height="25" Text="Пароль" FontSize="20"  />
+        </StackPanel>
+        <Button Grid.Row="2" Grid.Column="1"  Width="200" Height="50" x:Name="creat_akka" Content="Создать" Click="creat_akka_Click"  />
+    </Grid>
+</Page>
